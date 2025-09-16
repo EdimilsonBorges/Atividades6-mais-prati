@@ -1,7 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import IconShopping from "../../../assets/shopping-bag.svg";
+import { useCart } from "../../../context/CartContext";
+import IconShopping from "../../../assets/icons/shopping-bag.svg";
+
+
 
 function Menu() {
+
+  const { cart } = useCart();
 
   return (
     <>
@@ -10,13 +15,13 @@ function Menu() {
           <ul className='list-links-menu-right'>
             <li><NavLink className={"link-menu"} to={"/"}>Mini Loja</NavLink></li>
             <li><NavLink className={"link-menu"} to={"/"} >Inicio</NavLink></li>
-            <li><NavLink className={"link-menu"} to={"/"}>Sobre</NavLink></li>
+            <li><NavLink className={"link-menu"} to={"/cart"}>Carrinho</NavLink></li>
           </ul>
         </nav>
         <div className='list-links-menu-left'>
-          <a className='link-badge' href="#"><img src={IconShopping} width={"40px"} alt="" />
-            <span className='numbers-items-badge'>0</span>
-            </a>
+          <a className='link-badge' href="/cart"><img src={IconShopping} width={"40px"} alt="" />
+            <span className='numbers-items-badge'>{cart.length}</span>
+          </a>
           <label className="switch">
             <input defaultChecked="true" id="checkbox" type="checkbox" />
             <span className="slider">

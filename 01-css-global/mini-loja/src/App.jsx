@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { CartProvider } from "./context/CartContext";
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 import Header from "./components/Header";
 
 function App() {
@@ -7,13 +9,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/*<Route path="/favorites" element={<Favorites />} />
-          <Route path="/details/:id" element={<Details />} />
-          <Route path="*" element={<PageNotFound />} /> */}
-        </Routes>
+        <CartProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart /> }/>
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </>
   )
