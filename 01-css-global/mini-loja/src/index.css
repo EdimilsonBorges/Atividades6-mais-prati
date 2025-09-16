@@ -247,6 +247,16 @@ body {
   background-color: #F94343;
 }
 
+.icons-shopping-add-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #F94343;
+}
+
 .icon-link {
   height: 25px;
 }

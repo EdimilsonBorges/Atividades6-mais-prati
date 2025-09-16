@@ -2,16 +2,16 @@ import { useCart } from "../../context/CartContext";
 import IconLink from "../../assets/icons/icon-link.svg";
 import ShoppingCart from "../../assets/icons/shopping-cart.svg";
 
-function CardItems({ img, title, price }) {
-  const { cart, addToCart } = useCart();
+function CardItems({img, title, price }) {
+  const { cart, addToCart, removeFromCart} = useCart();
 
   const isInCart = cart.some(item => item.title === title);
 
-  const handleAddToCart = () => {
+  const handleAddRemoveToCart = () => {
     if (!isInCart) {
       addToCart({ img, title, price });
     } else {
-      alert("Este produto já está no carrinho!");
+      removeFromCart(title);
     }
   };
 
@@ -23,13 +23,11 @@ function CardItems({ img, title, price }) {
 
       <div className="links-icons">
         <button
-          onClick={handleAddToCart}
-          className="icons-shopping"
-          style={{ cursor: isInCart ? "not-allowed" : "pointer" }}
-          disabled={isInCart}
+          onClick={handleAddRemoveToCart}
+          className={isInCart ? "icons-shopping-add-cart" : "icons-shopping"}
         >
           
-          {isInCart ? <img className="icon-link" src={ShoppingCart} alt="Shopping cart" />:<img className="icon-link" src={ShoppingCart} alt="Shopping cart" />}
+          {isInCart ? <img title="Remover do carrinho." className="icon-link" src={ShoppingCart} alt="Shopping cart" />:<img title="Adicionar ao carrinho." className="icon-link" src={ShoppingCart} alt="Shopping cart" />}
         </button>
 
         <a href="#" className="icons-shopping">
