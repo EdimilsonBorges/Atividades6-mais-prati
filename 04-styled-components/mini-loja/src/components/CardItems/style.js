@@ -21,14 +21,14 @@ export const ImgItemsCard = styled.img`
 
 export const TitleItemsCard = styled.h2`
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: center;
   color: var(--text-color);
 `;
 
 export const PriceItemsCard = styled.span`
   padding-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   color: #F94343;
   `;
