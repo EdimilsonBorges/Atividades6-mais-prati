@@ -20,13 +20,13 @@
 
 .titleItemsCard {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: center;
   color: var(--text-color);
 }
 
 .priceItemsCard {
-  padding-bottom: 1rem;
+  padding-bottom: 1.2rem;
   font-size: 1rem;
   text-align: center;
   color: #F94343;
