@@ -1,0 +1,23 @@
+/* Home */
+
+.sectionHome {
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.titleHome{
+  color: var(--text-color);
+}
+
+.itemsCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
