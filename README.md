@@ -71,7 +71,7 @@ A tela deve conter uma **Navbar fixa** e um **grid de produtos** responsivo, com
 git clone https://github.com/EdimilsonBorges/Atividades6-mais-prati.git
 
 # Execute cada versão
-cd 01-css-global && npm install && npm run dev
-cd 02-css-modules && npm install && npm run dev
-cd 03-tailwind && npm install && npm run dev
-cd 04-styled-components && npm install && npm run dev
+cd 01-css-global/mini-loja && npm install && npm run dev
+cd 02-css-modules/mini-loja && npm install && npm run dev
+cd 03-tailwind/mini-loja && npm install && npm run dev
+cd 04-styled-components/mini-loja && npm install && npm run dev
