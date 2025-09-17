@@ -13,12 +13,18 @@ function Home() {
   ]);
 
   return (
-    <section className="section-home">
-      <section className="title-home">
-        <h1>Produtos em destaque</h1>
-        <p>Incrível coleção de itens em destaque da semana</p>
+    <section className="flex flex-col p-20 gap-5 justify-center items-center bg-[var(--bg-color)]">
+      <section className="text-[var(--text-color)]">
+        <h1 className="text-[3rem] text-center">Produtos em destaque</h1>
+        <p className="text-[1.5rem] text-center">Incrível coleção de itens em destaque da semana</p>
       </section>
-      <section className="items-cards">
+      <section className="
+          grid gap-2 justify-center items-center
+          grid-cols-1        /* mobile (até 480px) */
+          sm:grid-cols-2     /* >= 481px */
+          md:grid-cols-3     /* >= 769px */
+          lg:grid-cols-4     /* >= 1025px */
+  ">
         {items.map((item) => (
           <CardItems
             key={item.id}

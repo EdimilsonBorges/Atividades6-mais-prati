@@ -1,0 +1,29 @@
+/* src/styles/switch.css */
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 9999px;
+  left: 0.5em;
+  bottom: 0.5em;
+  transition: all 0.4s cubic-bezier(0.81, -0.04, 0.38, 1.5);
+  box-shadow: inset 8px -4px 0px 0px #fff;
+}
+
+.switch input:checked + .slider {
+  background-color: #00a6ff;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.8em);
+  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+}
+
+.switch input:checked ~ .slider .star {
+  opacity: 0;
+}
+
+.switch input:checked ~ .slider .cloud {
+  opacity: 1;
+}

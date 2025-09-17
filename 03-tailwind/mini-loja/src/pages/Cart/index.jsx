@@ -22,12 +22,12 @@ function Cart() {
       <table style={{ borderCollapse: "collapse", width: "100%" }}>
         <thead>
           <tr>
-            <th className="borderHeadTable"></th>
-            <th className="borderHeadTable"></th>
-            <th className="borderHeadTable">Produto</th>
-            <th className="borderHeadTable">Preço</th>
-            <th className="borderHeadTable">Quantidade</th>
-            <th className="borderHeadTable">Subtotal</th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)]"></th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)]"></th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)] text-[1.2rem]">Produto</th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)] text-[1.2rem]">Preço</th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)] text-[1.2rem]">Quantidade</th>
+            <th className="border border-[#ccc] p-2 text-[var(--text-color)] text-[1.2rem]">Subtotal</th>
           </tr>
         </thead>
 
@@ -41,7 +41,7 @@ function Cart() {
 
             return (
               <tr key={index}>
-                <td className="images-table">
+                <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)]">
                   <button
                     title="Remover do carrinho"
                     onClick={() => removeFromCart(item.title)}
@@ -52,7 +52,7 @@ function Cart() {
                     </svg>
                   </button>
                 </td>
-                <td className="images-table">
+                <td className="flex flex-col items-center content-center border border-[#ccc] p-2 text-center text-[var(--text-color)]">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -60,11 +60,15 @@ function Cart() {
                   />
                 </td>
 
-                <td className="title-table">{item.title}</td>
-                <td className="price-table">{item.price}</td>
-                <td className="amount-table">
+                <td className="border border-[#ccc] p-2 text-[var(--text-color)] text-[1.2rem]">{item.title}</td>
+                <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)] text-[1.2rem]">{item.price}</td>
+                <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)] text-[1.2rem]">
                   <input
-                    className="quantity-input"
+                    className="
+                        w-20 p-2 border-2 border-gray-300 rounded-lg 
+                        text-center text-base outline-none shadow-sm transition-all
+                        focus:border-[#217FD1] focus:shadow-[0_0_8px_rgba(59,130,246,0.4)]
+                    "
                     type="number"
                     value={quantity}
                     min={1}
@@ -72,7 +76,7 @@ function Cart() {
                     style={{ width: "60px" }}
                   />
                 </td>
-                <td className="price-table">
+                <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)] text-[1.2rem]">
                   R$ {subtotal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                 </td>
               </tr>
@@ -82,19 +86,27 @@ function Cart() {
 
         <tfoot>
           <tr>
-            <td colSpan={5} style={{ textAlign: "right", fontWeight: "bold", padding: "8px" }}>
+            <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)] text-[1.2rem]" colSpan={5} style={{ textAlign: "right", fontWeight: "bold", padding: "8px" }}>
               Total
             </td>
-            <td className="price-table">
+            <td className="border border-[#ccc] p-2 text-center text-[var(--text-color)]">
               R$ {total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
             </td>
           </tr>
         </tfoot>
       </table>
-      <button className="checkout-btn" type="button" onClick={clearCart}>Finalizar compra</button>
+      <button className="
+          mt-5 px-6 py-3 w-full 
+          text-white text-lg font-bold 
+          rounded-xl cursor-pointer transition-all 
+          bg-gradient-to-r from-blue-500 to-purple-600
+          shadow-md hover:from-blue-600 hover:to-purple-700
+          hover:-translate-y-[2px] hover:shadow-lg
+          active:translate-y-0 active:shadow-sm
+    " type="button" onClick={clearCart}>Finalizar compra</button>
     </section>
-  ) : (<section className="empty-cart">
-    <p className="empty-text">O carrinho está vazio, adicione algum item ao carrinho para mostrar aqui.</p>
+  ) : (<section className="m-auto p-24 w-[800px]">
+    <p className="text-2xl text-center font-bold text-[var(--text-color)]">O carrinho está vazio, adicione algum item ao carrinho para mostrar aqui.</p>
   </section>);
 }
 
