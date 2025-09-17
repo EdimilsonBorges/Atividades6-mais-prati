@@ -1,0 +1,33 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais */
+:root {
+  --bg-color-menu: #217FD1;
+  --bg-color: #FFFFFF;
+  --text-color: #444444;
+  --secondary-color: #2563eb;
+  --card-bg: #1f2937;
+  --font-base: 'Arial', sans-serif;
+}
+
+/* Estilos globais */
+body.dark-theme {
+  --bg-color-menu: #111111;
+  --bg-color: #333333;
+  --text-color: #eeeeee;
+  --secondary-color: #217FD1;
+  --card-bg: #1f2937;
+  --font-base: 'Arial', sans-serif;
+}
+
+/* Estilos globais */
+body {
+  font-family: var(--font-base);
+  line-height: 1.5;
+  background-color: var(--bg-color);
+}
