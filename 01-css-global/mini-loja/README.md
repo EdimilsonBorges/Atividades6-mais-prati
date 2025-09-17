@@ -1,12 +1,14 @@
-# React + Vite
+# Versão 01 — CSS Global
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+Nesta versão, toda a estilização foi feita com **CSS global** usando um único arquivo `.css`, aplicado de forma direta aos componentes.
 
-Currently, two official plugins are available:
+## Técnicas usadas
+- Arquivo `index.css` com classes globais.
+- Dark mode implementado via `body.dark-theme`.
+- Tokens definidos como variáveis CSS (`:root`).
+- Media queries manuais para breakpoints.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Pontos principais
+- Organização simples, mas pode gerar conflitos de classes.
+- Dark mode persistido com `localStorage`.
