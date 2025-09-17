@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useCart } from "../../../context/CartContext";
 import IconShopping from "../../../assets/icons/shopping-bag.svg";
@@ -7,6 +8,26 @@ import IconShopping from "../../../assets/icons/shopping-bag.svg";
 function Menu() {
 
   const { cart } = useCart();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+      document.body.classList.add("dark-theme");
+    }
+  }, []);
+
+  const handleToggle = () => {
+    if (isDark) {
+      document.body.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+    }
+    setIsDark(!isDark);
+  };
 
   return (
     <>
@@ -23,7 +44,7 @@ function Menu() {
             <span className='numbers-items-badge'>{cart.length}</span>
           </a>
           <label className="switch">
-            <input defaultChecked="true" id="checkbox" type="checkbox" />
+            <input id="checkbox" type="checkbox" onChange={handleToggle} checked={!isDark}/>
             <span className="slider">
               <div className="star star_1" />
               <div className="star star_2" />

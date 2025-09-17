@@ -1,5 +1,4 @@
 import { useCart } from "../../context/CartContext";
-import IconLink from "../../assets/icons/icon-link.svg";
 import ShoppingCart from "../../assets/icons/shopping-cart.svg";
 
 function CardItems({img, title, price }) {
@@ -21,7 +20,6 @@ function CardItems({img, title, price }) {
       <h2 className="title-items-card">{title}</h2>
       <span className="price-items-card">{price}</span>
 
-      <div className="links-icons">
         <button
           onClick={handleAddRemoveToCart}
           className={isInCart ? "icons-shopping-add-cart" : "icons-shopping"}
@@ -29,11 +27,6 @@ function CardItems({img, title, price }) {
           
           {isInCart ? <img title="Remover do carrinho." className="icon-link" src={ShoppingCart} alt="Shopping cart" />:<img title="Adicionar ao carrinho." className="icon-link" src={ShoppingCart} alt="Shopping cart" />}
         </button>
-
-        <a href="#" className="icons-shopping">
-          <img className="icon-link" src={IconLink} alt="Link cart" />
-        </a>
-      </div>
     </section>
   );
 }

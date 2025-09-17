@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <section className="section-home">
-      <section>
+      <section className="title-home">
         <h1>Produtos em destaque</h1>
         <p>Incrível coleção de itens em destaque da semana</p>
       </section>

@@ -7,8 +7,21 @@
 
 /* Variáveis globais */
 :root {
-  --primary-color: #4f46e5;
-  --secondary-color: #9333ea;
+  --bg-color-menu: #217FD1;
+  --bg-color: #FFFFFF;
+  --text-color: #444444;
+  --secondary-color: #2563eb;
+  --card-bg: #1f2937;
+  --font-base: 'Arial', sans-serif;
+}
+
+/* Estilos globais */
+body.dark-theme {
+  --bg-color-menu: #111111;
+  --bg-color: #333333;
+  --text-color: #eeeeee;
+  --secondary-color: #217FD1;
+  --card-bg: #1f2937;
   --font-base: 'Arial', sans-serif;
 }
 
@@ -16,6 +29,7 @@
 body {
   font-family: var(--font-base);
   line-height: 1.5;
+  background-color: var(--bg-color);
 }
 
 /* MENU */
@@ -25,7 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #217FD1;
+  background-color: var(--bg-color-menu);
   height: 3rem;
   padding: 0 3rem;
   z-index: 9999;
@@ -182,6 +196,11 @@ body {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color);
+}
+
+.title-home{
+  color: var(--text-color);
 }
 
 /* Items cards */
@@ -216,7 +235,7 @@ body {
   padding: 0.5rem;
   font-size: 1rem;
   text-align: center;
-  color: #444444;
+  color: var(--text-color);
 }
 
 .price-items-card {
@@ -226,20 +245,13 @@ body {
   color: #F94343;
 }
 
-.links-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333333;
-}
-
 .icons-shopping {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
   cursor: pointer;
-  background-color: #333333;
+  background-color: var(--secondary-color);
   border: none;
 }
 
@@ -289,30 +301,35 @@ body {
 
 .borderHeadTable {
   border: 1px solid #ccc;
-  padding: 8px
+  padding: 8px;
+  color: var(--text-color);
 }
 
 .images-table {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .title-table {
   border: 1px solid #ccc;
   padding: 8px;
+  color: var(--text-color);
 }
 
 .price-table {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .amount-table {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .quantity-input {
@@ -367,6 +384,10 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+.cart-section{
+  background-color: var(--bg-color);
+}
+
 .empty-cart{
   margin: auto;
   padding: 100px;
@@ -377,4 +398,5 @@ body {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
+  color: var(--text-color);
 }

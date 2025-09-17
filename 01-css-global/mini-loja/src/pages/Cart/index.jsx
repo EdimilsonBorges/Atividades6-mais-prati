@@ -45,9 +45,11 @@ function Cart() {
                   <button
                     title="Remover do carrinho"
                     onClick={() => removeFromCart(item.title)}
-                    style={{ cursor: "pointer", border: "none", background: "transparent" }}
+                    style={{ color: "red", cursor: "pointer", border: "none", background: "transparent" }}
                   >
-                    <img src={IconRemove} alt="Remover" width={20} />
+                    <svg viewBox="0 0 24 24" fill="currentColor" width={20} height={20}>
+                      <path d="M22,5a1,1,0,0,1-1,1H3A1,1,0,0,1,3,4H8V3A1,1,0,0,1,9,2h6a1,1,0,0,1,1,1V4h5A1,1,0,0,1,22,5ZM4.934,21.071,4,8H20l-.934,13.071a1,1,0,0,1-1,.929H5.931A1,1,0,0,1,4.934,21.071ZM15,18a1,1,0,0,0,2,0V12a1,1,0,0,0-2,0Zm-4,0a1,1,0,0,0,2,0V12a1,1,0,0,0-2,0ZM7,18a1,1,0,0,0,2,0V12a1,1,0,0,0-2,0Z" />
+                    </svg>
                   </button>
                 </td>
                 <td className="images-table">
@@ -91,7 +93,7 @@ function Cart() {
       </table>
       <button className="checkout-btn" type="button" onClick={clearCart}>Finalizar compra</button>
     </section>
-  ) : (<section  className="empty-cart">
+  ) : (<section className="empty-cart">
     <p className="empty-text">O carrinho está vazio, adicione algum item ao carrinho para mostrar aqui.</p>
   </section>);
 }
