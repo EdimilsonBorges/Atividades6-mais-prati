@@ -233,14 +233,14 @@ body {
 
 .title-items-card {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: center;
   color: var(--text-color);
 }
 
 .price-items-card {
   padding-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   color: #F94343;
 }
